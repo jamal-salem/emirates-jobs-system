@@ -1,46 +1,39 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
+{% block content %}
 
-    <title>Emirates Jobs System</title>
+<div class="title">
+    Candidates
+</div>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% for candidate in candidates %}
 
-</head>
+<div class="card">
 
-<body>
+    <h3>{{ candidate.full_name }}</h3>
 
-    <div class="navbar">
-        Emirates Jobs System 🔥
-    </div>
+    <p>
+        <strong>Specialization:</strong>
+        {{ candidate.specialization }}
+    </p>
 
-    <div class="container">
+    <p>
+        <strong>City:</strong>
+        {{ candidate.city }}
+    </p>
 
-        <div class="title">
-            Candidates
-        </div>
+    <p>
+        <strong>Skills:</strong>
+        {{ candidate.skills }}
+    </p>
 
-        {% for candidate in candidates %}
+    <p>
+        <strong>Preferred Sector:</strong>
+        {{ candidate.preferred_sector }}
+    </p>
 
-        <div class="card">
+</div>
 
-            <h3>{{ candidate.full_name }}</h3>
+{% endfor %}
 
-            <p><strong>Specialization:</strong> {{ candidate.specialization }}</p>
-
-            <p><strong>City:</strong> {{ candidate.city }}</p>
-
-            <p><strong>Skills:</strong> {{ candidate.skills }}</p>
-
-            <p><strong>Preferred Sector:</strong> {{ candidate.preferred_sector }}</p>
-
-        </div>
-
-        {% endfor %}
-
-    </div>
-
-</body>
-
-</html>
+{% endblock %}

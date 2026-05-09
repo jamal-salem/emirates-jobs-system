@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="title">
+    Matches
+</div>
+
+{% for match in matches %}
+
+<div class="match-card">
+
+    <div class="match-info">
+
+        <h3>{{ match.candidate }}</h3>
+
+        <p>
+            <strong>Job:</strong>
+            {{ match.job }}
+        </p>
+
+        <p>
+            <strong>Company:</strong>
+            {{ match.company }}
+        </p>
+
+        <p>
+            <strong>Match Score:</strong>
+            {{ match.score }}
+        </p>
+
+    </div>
+
+    <div class="score-circle">
+
+        {{ match.score }}
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

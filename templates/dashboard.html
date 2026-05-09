@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="title">
+    Dashboard
+</div>
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+
+        <h2>{{ total_candidates }}</h2>
+
+        <p>Total Candidates</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>{{ total_jobs }}</h2>
+
+        <p>Total Jobs</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>{{ total_matches }}</h2>
+
+        <p>Total Matches</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>ONLINE</h2>
+
+        <p>System Status</p>
+
+    </div>
+
+</div>
+
+{% endblock %}
