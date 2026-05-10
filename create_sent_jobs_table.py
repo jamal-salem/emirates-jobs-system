@@ -8,17 +8,15 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 
-create_table_query = """
+query = """
 
-CREATE TABLE IF NOT EXISTS sources (
+CREATE TABLE IF NOT EXISTS sent_jobs (
 
     id SERIAL PRIMARY KEY,
 
-    name TEXT,
+    job_id INTEGER,
 
-    url TEXT,
-
-    type TEXT
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 )
 
@@ -26,8 +24,8 @@ CREATE TABLE IF NOT EXISTS sources (
 
 with engine.connect() as connection:
 
-    connection.execute(text(create_table_query))
+    connection.execute(text(query))
 
     connection.commit()
 
-print("\nSources table created successfully!")
+print("\nSent jobs table created!")
